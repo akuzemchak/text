@@ -1,6 +1,6 @@
 <?php
 
-use Kuz\Text\Text;
+use Kuz\Text;
 
 class FormatTest extends PHPUnit_Framework_TestCase
 {

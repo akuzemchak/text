@@ -1,6 +1,6 @@
 <?php
 
-namespace Kuz\Text;
+namespace Kuz;
 
 class Text
 {

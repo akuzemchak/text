@@ -1,6 +1,6 @@
 <?php
 
-use Kuz\Text\Text;
+use Kuz\Text;
 
 class Nl2pTest extends PHPUnit_Framework_TestCase
 {
