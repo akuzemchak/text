@@ -1,0 +1,24 @@
+{
+    "name": "kuz/text",
+    "description": "Some handy text processing utilities",
+    "keywords": ["text", "processing", "nl2br", "nl2p", "format", "replace"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aaron Kuzemchak",
+            "email": "aaron@kuzemchak.net",
+            "homepage": "http://kuzemchak.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Kuz": "src"
+        }
+    }
+}
