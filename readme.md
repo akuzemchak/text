@@ -12,47 +12,47 @@ Use [Composer](http://getcomposer.org/). Seriously.
 
 ## Kuz\Text::format()
 
-The `Text::format()` method is similar to PHP's native `sprintf` or `vsprintf` functions, but more fun to use.
+    string Kuz\Text::format( string $subject , array $replacements [, string $prefix = ':'] )
 
-    string Kuz\Text::format(string $subject , array $replacements [, string $prefix = ':'])
+The `Text::format()` method is similar to PHP's native [`sprintf`](http://php.net/sprintf) or [`vsprintf`](http://php.net/vsprintf) functions, but more fun to use.
 
 ### Replace named placeholders
 
     $subject = 'My name is :name, and I am a :title.';
     $replacements = ['name' => 'Aaron', 'title' => 'Code Monkey'];
 
-    // My name is Aaron, and I am a Code Monkey.
     echo Kuz\Text::format($subject, $replacements);
+    // My name is Aaron, and I am a Code Monkey.
 
 ### Replace numeric placeholders
 
     $subject = 'My name is :0, and I am a :1.';
     $replacements = ['Aaron', 'Code Monkey'];
 
-    // My name is Aaron, and I am a Code Monkey.
     echo Kuz\Text::format($subject, $replacements);
+    // My name is Aaron, and I am a Code Monkey.
 
 ### Replace multiple occurrences
 
-    $subject = ':num plus :num equals :total';
+    $subject = ':0 plus :0 equals :1';
     $replacements = [3, 6];
 
-    // 3 plus 3 equals 6
     echo Kuz\Text::format($subject, $replacements);
+    // 3 plus 3 equals 6
 
 ### Use custom identifiers
 
     $subject = 'My name is %name, and I am a %title.';
     $replacements = ['name' => 'Aaron', 'title' => 'Code Monkey'];
 
-    // My name is Aaron, and I am a Code Monkey.
     echo Kuz\Text::format($subject, $replacements, '%');
+    // My name is Aaron, and I am a Code Monkey.
 
 ## Kuz\Text::nl2p()
 
-The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrapping blocks of text in `<p></p>` tags.
+    string Kuz\Text::nl2p( string $text [, bool $xhtml = false] )
 
-    string Kuz\Text::nl2p(string $text [, bool $xhtml = false])
+The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrapping blocks of text in `<p></p>` tags.
 
 ### Basic usage example
 
@@ -61,11 +61,7 @@ The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrappi
 
     This is some placeholder text. It should be a new paragraph.
 
-
-
     As should this.
-
-
 
 
 
@@ -73,6 +69,7 @@ The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrappi
     But this one has a line break as well.
     EOD;
 
+    echo Kuz\Text::nl2p($text);
     // <p>Hello.</p>
     //
     // <p>This is some placeholder text. It should be a new paragraph.</p>
@@ -81,7 +78,6 @@ The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrappi
     //
     // <p>As should this.<br>
     // But this one has a line break as well.</p>
-    echo Kuz\Text::nl2p($text);
 
 ### Want XHTML style `<br>` tags?
 
@@ -90,6 +86,6 @@ The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrappi
     With a line break!
     EOD;
 
+    echo Kuz\Text::nl2p($text, true);
     // <p>This is a paragraph...<br />
     // With a line break!</p>
-    echo Kuz\Text::nl2p($text, true);
