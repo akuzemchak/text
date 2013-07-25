@@ -52,7 +52,7 @@ The `Text::format()` method is similar to PHP's native [`sprintf`](http://php.ne
 
     string Kuz\Text::nl2p( string $text [, bool $xhtml = false] )
 
-The `Text::nl2p()` method takes PHP's `nl2br` function a step further, by wrapping blocks of text in `<p></p>` tags.
+The `Text::nl2p()` method takes PHP's [`nl2br`](http://php.net/nl2br) function a step further, by wrapping blocks of text in `<p></p>` tags.
 
 ### Basic usage example
 
