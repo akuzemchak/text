@@ -1,5 +1,7 @@
 # Kuz Text Utilities
 
+[![Build Status](https://travis-ci.org/akuzemchak/text.png?branch=master)](https://travis-ci.org/akuzemchak/text)
+
 This is a simple PHP class that adds a few helper methods for performing different actions on text. Nothing too fancy, but should be helpful to someone other than me.
 
 ## Installation
