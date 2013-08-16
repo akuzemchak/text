@@ -31,4 +31,12 @@ class Nl2pTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, Text::nl2p($source, true));
     }
+
+    public function testDoesNotFormatEmptyString()
+    {
+        $source = '   ';
+        $expected = '';
+
+        $this->assertEquals($expected, Text::nl2p($source));
+    }
 }

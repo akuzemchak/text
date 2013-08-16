@@ -37,6 +37,9 @@ class Text
         // Split into fragments
         $fragments = preg_split("/\n{2,}/", trim($text));
 
+        // Remove empty elements
+        $fragments = array_filter($fragments);
+
         // Generate paragraphs and breaks
         $fragments = array_map(function ($fragment) use ($xhtml) {
             return '<p>' . nl2br($fragment, $xhtml) . '</p>';
